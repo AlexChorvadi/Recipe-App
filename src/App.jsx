@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import RecipeDetails from "./pages/RecipeDetails";
 import { RecipeProvider } from "./context/RecipeContext";
 import Favorites from "./pages/Favorites";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         />
         <Route path="/favorites" element={<Favorites />} />
       </Routes>
+      <Footer />
     </RecipeProvider>
   );
 }
