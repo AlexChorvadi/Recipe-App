@@ -16,6 +16,16 @@ export const RecipeProvider = ({ children }) => {
     return saved ? JSON.parse(saved) : [];
   });
 
+  const [debouncedSearch, setDebouncedSearch] = useState("");
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedSearch(search);
+    }, 500); // 500ms delay
+
+    return () => clearTimeout(timer);
+  }, [search]);
+
   const fetchRecipes = async () => {
     try {
       setLoading(true);
@@ -52,7 +62,7 @@ export const RecipeProvider = ({ children }) => {
 
   useEffect(() => {
     fetchRecipes();
-  }, [ingredient, category, search]);
+  }, [ingredient, category, debouncedSearch]);
 
   const fetchCategories = async () => {
     try {
