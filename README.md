@@ -1,3 +1,5 @@
+**Live:** [Web](https://recipeguide-krushi.netlify.app/)
+
 # Recipe Finder 🍽️
 
 A modern recipe discovery application built with React, React Router, Context API, Axios, and Tailwind CSS.
